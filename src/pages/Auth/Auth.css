@@ -1,0 +1,89 @@
+label {
+  color: var(--black-color);
+}
+.form-input {
+  padding: var(--spacing-xxs) var(--spacing-xxs);
+  background-color: var(--form-input-bg-color);
+  min-width: 15rem;
+  border-radius: var(--border-rd-xs);
+}
+.input-box {
+  border-radius: var(--border-rd-xs);
+  background-color: var(--form-input-bg-color);
+  padding-right: var(--spacing-xxs);
+}
+.login-form label::after,
+.signup-form label::after {
+  content: "*";
+  color: var(--required-field-indicator-color);
+}
+.login,
+.signup {
+  padding: var(--spacing-md) 4rem;
+  background-color: var(--white-color);
+  width: fit-content;
+  margin: var(--spacing-lg) auto;
+  border-radius: var(--border-rd-md);
+}
+.login-form,
+.signup-form {
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+}
+.input-field-wrapper {
+  gap: var(--spacing-xxs);
+}
+.btn-verify {
+  padding: 0.4rem var(--spacing-sm);
+  color: var(--white-color);
+  width: 100%;
+  border: 2.5px solid transparent;
+}
+.btn-verify:hover {
+  background-color: var(--primary-color);
+}
+.btn-primary {
+  background-color: var(--primary-color);
+}
+.btn-secondary {
+  border: 1px solid var(--primary-color);
+  background-color: var(--white-color);
+  margin-top: 0.8rem;
+}
+.btn-secondary button {
+  color: var(--primary-color);
+}
+.btn-secondary:hover {
+  background-color: var(--white-color);
+}
+.btn-secondary .btn-icon {
+  color: var(--primary-color);
+}
+.link-to-option {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+.error-msg {
+  color: var(--required-field-indicator-color);
+}
+.msg {
+  margin-top: var(--spacing-xs);
+}
+.alert {
+  padding: 1rem;
+  position: absolute;
+  top: 6rem;
+}
+.btn-logout {
+  border-radius: var(--border-rd-sm);
+  padding: 0.2rem var(--spacing-xxs);
+  background-color: var(--required-field-indicator-color);
+  color: var(--white-color);
+}
+@media only screen and (max-width: 427px) {
+  .login,
+  .signup {
+    box-shadow: none;
+    padding: 0;
+  }
+}

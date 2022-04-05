@@ -1,8 +1,11 @@
 :root {
   /** colors **/
-  --primary-color: #4b4e53;
-  --secondary-color: #336666;
-  --footer-highlighted-text-color: #525752;
+  --primary-color: hsl(217, 5%, 31%);
+  --secondary-color: hsl(180, 33%, 30%);
+  --footer-highlighted-text-color: hsl(120, 3%, 33%);
+  --form-input-bg-color: hsl(0, 0%, 93%);
+  --required-field-indicator-color: hsl(0, 95%, 60%);
+
 
   /** spacings **/
   --spacing-xxs: 0.5rem;
@@ -49,6 +52,9 @@ h4,
 h5,
 h6 {
   padding-top: 0;
+}
+.display-none{
+  display: none;
 }
 @media only screen and (min-width: 1400px) {
   html {
