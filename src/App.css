@@ -1,0 +1,57 @@
+:root {
+  /** colors **/
+  --primary-color: #4b4e53;
+  --secondary-color: #336666;
+  --footer-highlighted-text-color: #525752;
+
+  /** spacings **/
+  --spacing-xxs: 0.5rem;
+  --spacing-xs: 1rem;
+  --spacing-sm: 1.5rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 3.5rem;
+
+  /** font-size **/
+  --font-size-xxs: 0.8rem;
+  --font-size-xs: 1rem;
+  --font-size-sm: 1.2rem;
+  --font-size-md: 1.4rem;
+  --font-size-lg: 1.6rem;
+  --font-size-xl: 1.8rem;
+
+  /** font-weight **/
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  /** border-radius **/
+  --border-rd-xs: 3px;
+  --border-rd-sm: 6px;
+  --border-rd-md: 8px;
+  --border-rd-lg: 16px;
+  --border-rd-xl: 24px;
+  --border-rd-round: 50%;
+}
+body {
+  width: 95vw;
+  margin: 0 auto;
+}
+/** overriding component library styles **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: 0;
+}
+@media only screen and (min-width: 1400px) {
+  html {
+    font-size: 120%;
+  }
+}
