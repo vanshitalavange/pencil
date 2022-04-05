@@ -1,0 +1,9 @@
+.footer{
+    margin:5rem 0 var(--spacing-xs) 0;
+}
+.highlighted-text{
+    padding:0.1rem 0.5rem;
+    background-color: var(--footer-highlighted-text-color);
+    color:var(--white-color);
+    border-radius: var(--border-rd-xs);
+}

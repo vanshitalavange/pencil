@@ -1,0 +1,34 @@
+.hero-banner {
+  width: clamp(25rem, 30rem, 35rem);
+}
+.hero {
+  gap: var(--spacing-xxl);
+  margin-top: var(--spacing-md);
+  align-content: center;
+}
+.hero-desc {
+  gap: var(--spacing-xs);
+  padding: 0 var(--spacing-sm);
+}
+.desc-heading {
+  font-size: 6rem;
+  font-weight: var(--font-weight-light);
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.desc-subtext-wrapper {
+  gap: var(--spacing-xxs);
+}
+.desc-subtext {
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  max-width: 30rem;
+}
+.btn-join {
+  padding: 0.7rem var(--spacing-xs);
+  border-radius: var(--border-rd-xs);
+  width: fit-content;
+  background-color: var(--secondary-color);
+  font-size: var(--font-size-md);
+  color: var(--white-color);
+}
