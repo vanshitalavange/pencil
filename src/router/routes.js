@@ -4,6 +4,7 @@ import { Home, Login, Signup, Notes } from "../pages/index"
 import { useAuth } from "../contexts"
 export const Router = () => {
     const { userState: { loginStatus } } = useAuth()
+    console.log(loginStatus);
     return (
         <Routes>
             <Route path="/" element={<Home />} />

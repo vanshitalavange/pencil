@@ -1,23 +1,28 @@
 import "./Notes.css"
 import { Sidebar, TextEditor } from "../../components"
 import { useState } from "react"
+import { useNote } from "../../contexts"
+import { NoteCard } from "../../components"
 export const Notes = () => {
-    const [textEditorClass, setTextEditorClass] = useState("display-none")
-    const toggleTextEditorClass = () => {
-        setTextEditorClass(className => className === "display-none" ? setTextEditorClass("text-editor flex-column") : setTextEditorClass("display-none"))
-    }
+    const { notes } = useNote()
+    const [showTextEditor, setShowTextEditor] = useState(false)
     return <main className="page-main flex-row">
         <Sidebar />
         <section className="notes-section flex-column">
-            <div onClick={() => toggleTextEditorClass()} className="new-note  flex-row">
-                <span class="material-icons-round add-icon align-center app-icon">
+            <div onClick={() => setShowTextEditor(true)} className="new-note  flex-row">
+                <span className="material-icons-round add-icon align-center app-icon">
                     add_circle_outline
                 </span>
                 <div className="new-note-text">
                     <div>Take a note..</div>
                 </div>
             </div>
-            <TextEditor toggleTextEditor={textEditorClass} />
+            {showTextEditor && <TextEditor setShowTextEditor={setShowTextEditor} />}
+            <div className="flex-row notes-display-section flex-wrap">{
+                notes.map(note => {
+                    return <NoteCard note={note} />
+                })
+            }</div>
         </section>
 
     </main>

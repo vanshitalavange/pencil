@@ -22,3 +22,6 @@
 .notes-section {
   gap: var(--spacing-xl);
 }
+.notes-display-section{
+  gap:var(--spacing-sm);
+}
