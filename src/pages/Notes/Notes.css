@@ -1,0 +1,24 @@
+.page-main {
+  margin: var(--spacing-md) 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: var(--spacing-md);
+}
+.new-note {
+  height: fit-content;
+  gap: var(--spacing-xxs);
+}
+.add-icon {
+  font-size: 2rem;
+}
+.new-note-text {
+  width: 60%;
+  padding: 0.7rem var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-rd-sm);
+  color: var(--secondary-color);
+  box-shadow: 1px 2px 25px lightgrey;
+}
+.notes-section {
+  gap: var(--spacing-xl);
+}
