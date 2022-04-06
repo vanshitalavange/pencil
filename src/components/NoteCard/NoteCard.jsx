@@ -3,7 +3,7 @@ import { useNote } from "../../contexts"
 export const NoteCard = ({ note }) => {
     const { setNoteData, setShowTextEditor, notes } = useNote()
     const { title, priority, tags, noteText, date, _id, color } = { ...note }
-    return <div style={{backgroundColor:color === "" ? "white" : color}} className="note-card flex-column">
+    return <div style={color && { backgroundColor: color, border: `1px solid ${color}` }} className="note-card flex-column">
         <div className="flex-row justify-space-between note-card-header flex-wrap">
             <h3 class="note-title">{title === "" ? "No title" : title}</h3>
             <span class="priority">{priority === "" ? "low" : priority}</span>

@@ -1,7 +1,7 @@
 .note-card {
   gap: var(--spacing-sm);
-  border: 1px solid lightgray;
   width: fit-content;
+  border: 1px solid lightgray;
   padding: var(--spacing-sm);
   border-radius: var(--border-rd-md);
   max-width:25rem;

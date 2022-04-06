@@ -8,8 +8,7 @@ export const TextEditor = () => {
     const { userState: { authToken } } = useAuth()
     const { setShowTextEditor, noteData, setNoteData, dispatchNotes, defaultNoteData } = useNote()
     const { title, tags, noteText, _id, color } = noteData;
-    // console.log("color",color)
-    return <section style={{backgroundColor:color === "" ? "white" : color}} className="text-editor flex-column">
+    return <section style={color && {backgroundColor:color}} className="text-editor flex-column">
         <div className="flex-row justify-space-between">
             <input onChange={(event) => getFormInput(event, setNoteData)} value={title} className="text-editor-title" name="title" type="text" placeholder="Title" />
             <button onClick={() => setShowTextEditor(false)}><span className="material-icons-round app-icon">
