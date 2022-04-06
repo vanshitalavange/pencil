@@ -1,0 +1,19 @@
+.label-input {
+  max-width: 10rem;
+  border-radius: var(--border-rd-sm);
+  padding: var(--spacing-xxs);
+}
+.label-input-container {
+  gap: 0.3rem;
+  position: absolute;
+  top: var(--spacing-lg);
+  box-shadow: 1px 2px 15px rgb(203, 202, 202);
+  background-color: var(--white-color);
+
+}
+.btn-add-label {
+  padding: 0.2rem 0.4rem;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  border-radius: var(--border-rd-sm);
+}

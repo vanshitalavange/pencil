@@ -1,0 +1,30 @@
+.palette {
+  position: absolute;
+  padding: 0.7rem var(--spacing-xs);
+  top: var(--spacing-lg);
+  gap: var(--spacing-xs);
+  border-radius: var(--border-rd-md);
+  background-color: var(--white-color);
+  box-shadow: 1px 2px 15px lightgrey;
+}
+.color-selector {
+  padding: var(--spacing-xxs);
+  width: var(--spacing-sm);
+  height: var(--spacing-sm);
+  border-radius: var(--border-rd-round);
+}
+.color-selector:nth-child(1) {
+  background-color: #fff475;
+}
+.color-selector:nth-child(2) {
+  background-color: #cbf0f8;
+}
+.color-selector:nth-child(3) {
+  background-color: #aecbfa;
+}
+.color-selector:nth-child(4) {
+  background-color: #ccff90;
+}
+.color-selector:nth-child(5) {
+  background-color: #d7aefb;
+}
