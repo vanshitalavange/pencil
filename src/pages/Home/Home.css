@@ -28,7 +28,7 @@
   padding: 0.7rem var(--spacing-xs);
   border-radius: var(--border-rd-xs);
   width: fit-content;
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   font-size: var(--font-size-md);
   color: var(--white-color);
 }

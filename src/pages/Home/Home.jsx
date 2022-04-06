@@ -16,6 +16,8 @@ export const Home = () => {
         <button onClick={() => {
           if (!loginStatus) {
             navigate("/signup")
+          } else {
+            navigate("/notes")
           }
         }} className="btn-join">{loginStatus ? "Go to notes" : "Join now"}</button>
       </div>
