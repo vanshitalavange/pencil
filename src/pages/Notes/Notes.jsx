@@ -4,8 +4,7 @@ import { useState } from "react"
 import { useNote } from "../../contexts"
 import { NoteCard } from "../../components"
 export const Notes = () => {
-    const { notes } = useNote()
-    const [showTextEditor, setShowTextEditor] = useState(false)
+    const { notes, showTextEditor, setShowTextEditor } = useNote()
     return <main className="page-main flex-row">
         <Sidebar />
         <section className="notes-section flex-column">
@@ -17,7 +16,7 @@ export const Notes = () => {
                     <div>Take a note..</div>
                 </div>
             </div>
-            {showTextEditor && <TextEditor setShowTextEditor={setShowTextEditor} />}
+            {showTextEditor && <TextEditor />}
             <div className="flex-row notes-display-section flex-wrap">{
                 notes.map(note => {
                     return <NoteCard note={note} />

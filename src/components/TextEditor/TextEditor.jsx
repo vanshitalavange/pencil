@@ -2,20 +2,16 @@ import "./TextEditor.css"
 import { useState, useEffect } from "react"
 import { getFormInput } from "../../utils/getFormInput"
 import { ColorPalette, AddLabel, Priority } from "../index"
-import { useNote } from "../../contexts"
-export const TextEditor = ({ setShowTextEditor }) => {
-    const { addNoteHandler } = useNote()
-    const [noteData, setNoteData] = useState({
-        title: "",
-        noteText: "",
-        tags: [],
-        priority: "",
-        date: new Date().toLocaleDateString()
-    })
-    const { tags } = noteData;
-    return <section className="text-editor flex-column">
+import { useNote, useAuth } from "../../contexts"
+import { addNote, editNote } from "../../services"
+export const TextEditor = () => {
+    const { userState: { authToken } } = useAuth()
+    const { setShowTextEditor, noteData, setNoteData, dispatchNotes, defaultNoteData } = useNote()
+    const { title, tags, noteText, _id, color } = noteData;
+    // console.log("color",color)
+    return <section style={{backgroundColor:color === "" ? "white" : color}} className="text-editor flex-column">
         <div className="flex-row justify-space-between">
-            <input onChange={(event) => getFormInput(event, setNoteData)} className="text-editor-title" name="title" type="text" placeholder="Title" required />
+            <input onChange={(event) => getFormInput(event, setNoteData)} value={title} className="text-editor-title" name="title" type="text" placeholder="Title" />
             <button onClick={() => setShowTextEditor(false)}><span className="material-icons-round app-icon">
                 close
             </span></button>
@@ -50,15 +46,24 @@ export const TextEditor = ({ setShowTextEditor }) => {
             </span>
             </button>
         </div>
-        <textarea onChange={(event) => { getFormInput(event, setNoteData) }} className="text-editor-textarea" name="noteText" placeholder="Take a note..." required></textarea>
+        <textarea onChange={(event) => { getFormInput(event, setNoteData) }} value={noteText} className="text-editor-textarea" name="noteText" placeholder="Take a note..."></textarea>
         <div className="flex-row justify-space-between">
             <div className="text-editor-actions flex-row">
                 <ColorPalette />
-                <AddLabel noteData={noteData} setNoteData={setNoteData} />
-                <Priority noteData={noteData} setNoteData={setNoteData} />
+                <AddLabel />
+                <Priority />
             </div>
-            <button type="submit" onClick={() => addNoteHandler(noteData, setShowTextEditor)} className="btn-add-note">Add</button>
+            <button type="submit" onClick={() => {
+                if (noteData.edit) {
+                    editNote(authToken, _id, noteData, dispatchNotes)
+                } else {
+                    addNote(authToken, noteData, dispatchNotes)
+                }
+                setNoteData(defaultNoteData)
+                setShowTextEditor(false)
+
+            }} className="btn-add-note">{noteData.edit ? "Save" : "Add"}</button>
         </div>
 
-    </section>
+    </section >
 }

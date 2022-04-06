@@ -1,7 +1,9 @@
 import "./Priority.css"
 import { useState } from "react"
 import { getFormInput } from "../../utils/getFormInput"
-export const Priority = ({ noteData, setNoteData }) => {
+import { useNote } from "../../contexts"
+export const Priority = () => {
+    const { noteData, setNoteData } = useNote()
     const [priorityListClass, setPriorityListClass] = useState("display-none")
     const togglePriorityListClass = () => {
         setPriorityListClass(className => className === "display-none" ? setPriorityListClass("priority-list") : setPriorityListClass("display-none"))

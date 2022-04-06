@@ -1,8 +1,9 @@
 import "./AddLabel.css"
 import { useState } from "react"
 import { getFormInput } from "../../utils/getFormInput"
-
-export const AddLabel = ({ noteData, setNoteData }) => {
+import { useNote } from "../../contexts"
+export const AddLabel = () => {
+    const { setNoteData } = useNote()
     const [labelText, setLabelText] = useState("");
     const [labelClass, setLabelClass] = useState("display-none")
     const toggleAddLabel = () => {

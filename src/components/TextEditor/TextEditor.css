@@ -10,6 +10,7 @@
   padding: var(--spacing-xxs) var(--spacing-xs) var(--spacing-xxs) 0;
   width: 100%;
   font-size: var(--font-size-sm);
+  background-color: inherit;
 }
 .text-editor-textarea {
   margin-top: 0;
@@ -17,6 +18,7 @@
   padding: var(--spacing-xs) 0;
   resize: none;
   font-family: inherit;
+  background-color: inherit;
 }
 .toolbar {
   gap: var(--spacing-xxs);
