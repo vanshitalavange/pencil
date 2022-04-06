@@ -35,18 +35,19 @@
 }
 .tags {
   gap: var(--spacing-xxs);
+  margin-bottom: var(--spacing-xxs);
 }
 .tag {
   padding: 0.3rem var(--spacing-xxs);
   background-color: var(--secondary-color);
   border-radius: var(--border-rd-xl);
   gap: 0.3rem;
-  color:var(--white-color);
+  color: var(--white-color);
 }
 .close-tag {
   font-size: 1rem;
   cursor: pointer;
-  color:var(--white-color)
+  color: var(--white-color);
 }
 @media only screen and (max-width: 600px) {
   .text-editor {
