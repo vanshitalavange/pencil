@@ -25,3 +25,12 @@ header {
   border: 3px solid var(--primary-color);
   background-color: var(--white-color);
 }
+.user-name {
+  font-size: var(--font-size-sm);
+}
+.btn-logout {
+  border-radius: var(--border-rd-sm);
+  padding: 0.2rem var(--spacing-xxs);
+  background-color: var(--required-field-indicator-color);
+  color: var(--white-color);
+}
