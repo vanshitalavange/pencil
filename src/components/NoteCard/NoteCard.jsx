@@ -6,7 +6,7 @@ export const NoteCard = ({ note }) => {
     const { userState: { authToken } } = useAuth()
     const { setNoteData, setShowTextEditor, notesState, dispatchNotes } = useNote()
     const { notes, archives, deletedNotes } = notesState
-    const { title, priority, tags, noteText, date, _id, color } = { ...note }
+    const { title, priority, tag, noteText, date, _id, color } = { ...note }
     const archiveNoteHandler = () => {
         archiveNote(authToken, _id, note, dispatchNotes)
     }
@@ -16,9 +16,7 @@ export const NoteCard = ({ note }) => {
             <span class="priority">{priority === "" ? "low" : priority}</span>
         </div>
         <div className="note-content">{noteText === "" ? "Empty note" : noteText}</div>
-        <div class="tags flex-row flex-wrap">{tags.map(tag => {
-            return <span className="tag">{tag}</span>
-        })}</div>
+        <div class="tags flex-row flex-wrap"><span className="tag">{tag}</span></div>
         <div className="flex-row date-container"><span class="material-icons-outlined">
             today
         </span>

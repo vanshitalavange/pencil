@@ -1,14 +1,18 @@
 import "./Priority.css"
 import { getFormInput } from "../../utils/getFormInput"
 import { useNote } from "../../contexts"
+import { useEffect } from "react"
 export const Priority = ({ activeElement, setActiveElement }) => {
     const { noteData, setNoteData } = useNote()
-    if (noteData.priority === "") {
-        setNoteData(noteData => ({ ...noteData, priority: "low" }))
-    }
-
+    useEffect(() => {
+        if (noteData.priority === "") {
+            setNoteData(noteData => ({ ...noteData, priority: "low" }))
+        }
+    }, [])
     return <div className="note-priority">
-        <button onClick={() => setActiveElement(active => ({ showPaletteDropDown: false, showAddLabelDropDown: false, showPriorityDropDown: !active.showPriorityDropDown }))
+        <button onClick={() => {
+            setActiveElement(active => ({ showPaletteDropDown: false, showAddLabelDropDown: false, showPriorityDropDown: !active.showPriorityDropDown }))
+        }
         } className="btn-priority">{
                 noteData.priority
             }</button>

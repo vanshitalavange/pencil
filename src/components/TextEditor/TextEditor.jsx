@@ -7,12 +7,13 @@ import { addNote, editNote } from "../../services"
 export const TextEditor = () => {
     const { userState: { authToken } } = useAuth()
     const { setShowTextEditor, noteData, setNoteData, dispatchNotes, defaultNoteData } = useNote()
-    const { title, tags, noteText, _id, color } = noteData;
+    const { title, tag, noteText, _id, color } = noteData;
     const [activeAction, setActiveAction] = useState({
         showPaletteDropDown: false,
         showAddLabelDropDown: false,
         showPriorityDropDown: false
     })
+
     return <section style={color && { backgroundColor: color }} className="text-editor flex-column">
         <div className="flex-row justify-space-between">
             <input onChange={(event) => getFormInput(event, setNoteData)} value={title} className="text-editor-title" name="title" type="text" placeholder="Title" />
@@ -21,19 +22,9 @@ export const TextEditor = () => {
             </span></button>
         </div>
         <div className="tags flex-row flex-wrap">
-            {
-                tags.length !== 0 && tags.map(tag => {
-                    return <div className="tag flex-row">
+            {tag !== "" && <div className="tag flex-row">
                         <span>{tag}</span>
-                        <span onClick={() => {
-                            const updatedTags = tags.filter(tagItem => tagItem !== tag)
-                            setNoteData({ ...noteData, tags: updatedTags })
-                        }} className="material-icons-round app-icon close-tag align-center">
-                            close
-                        </span>
-                    </div>
-                })
-            }
+                    </div>}
         </div>
         <div className="toolbar flex-row">
             <button className="btn-toolbar"><span className="material-icons-round app-icon">
@@ -50,7 +41,7 @@ export const TextEditor = () => {
             </span>
             </button>
         </div>
-        <textarea onChange={(event) => { getFormInput(event, setNoteData) }} value={noteText} className="text-editor-textarea" name="noteText" placeholder="Take a note..."></textarea>
+        <textarea onChange={(event) => { getFormInput(event, setNoteData); setNoteData(noteData => ({ ...noteData, date: new Date().toLocaleString() })) }} value={noteText} className="text-editor-textarea" name="noteText" placeholder="Take a note..."></textarea>
         <div className="flex-row justify-space-between">
             <div className="text-editor-actions flex-row">
                 <ColorPalette activeElement={activeAction} setActiveElement={setActiveAction} />
