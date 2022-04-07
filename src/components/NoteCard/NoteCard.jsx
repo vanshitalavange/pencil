@@ -16,7 +16,7 @@ export const NoteCard = ({ note }) => {
             <span class="priority">{priority === "" ? "low" : priority}</span>
         </div>
         <div className="note-content">{noteText === "" ? "Empty note" : noteText}</div>
-        <div class="tags flex-row flex-wrap"><span className="tag">{tag}</span></div>
+        <div class="tags flex-row flex-wrap">{tag !== "" && <span className="tag">{tag}</span>}</div>
         <div className="flex-row date-container"><span class="material-icons-outlined">
             today
         </span>
