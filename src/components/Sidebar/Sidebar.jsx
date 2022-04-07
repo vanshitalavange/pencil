@@ -8,24 +8,12 @@ export const Sidebar = () => {
                 </span>
                 <p>Notes</p>
             </li>
-            {/* <li className="list-item flex-row">
-                <span class="material-icons-outlined sidebar-list-icon">
-                    notifications
-                </span>
-                <p>Reminder</p>
-            </li> */}
             <li className="list-item flex-row">
                 <span class="material-icons-outlined sidebar-list-icon app-icon">
                     label
                 </span>
                 <p>Label</p>
             </li>
-            {/* <li className="list-item flex-row">
-                <span class="material-icons-outlined sidebar-list-icon">
-                    edit
-                </span>
-                <p>Edit label</p>
-            </li> */}
             <li className="list-item flex-row"
             >
                 <span class="material-icons-outlined sidebar-list-icon app-icon">
