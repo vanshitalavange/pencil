@@ -4,20 +4,35 @@ import { getFormInput } from "../../utils/getFormInput"
 import { useNote } from "../../contexts"
 export const AddLabel = ({ activeElement, setActiveElement }) => {
     const { setNoteData } = useNote()
-    const [labelText, setLabelText] = useState("");
     return <div className="add-new-label">
         <button onClick={() => setActiveElement(active => ({ showPaletteDropDown: false, showAddLabelDropDown: !active.showAddLabelDropDown, showPriorityDropDown: false }))
         }><span className="material-icons-outlined">
                 new_label
             </span></button>
-        {activeElement.showAddLabelDropDown && <div className="label-input-container flex-row">
-            <input onChange={(event) => setLabelText(event.target.value)} value={labelText} type="text" className="label-input" placeholder="Add new label" />
-            <button onClick={(event) => {
-                getFormInput(event, setNoteData, "tags", labelText)
+        {activeElement.showAddLabelDropDown && <ul className="tags-list">
+            <li onClick={(event) => {
+                getFormInput(event, setNoteData, "tag", "work")
                 setActiveElement(active => ({ ...active, showAddLabelDropDown: !active.showAddLabelDropDown }))
-                setLabelText("")
             }
-            } className="btn-add-label">add</button>
-        </div>}
+            } className="tags-list-item">work</li>
+            <li onClick={(event) => {
+                getFormInput(event, setNoteData, "tag", "important")
+                setActiveElement(active => ({ ...active, showAddLabelDropDown: !active.showAddLabelDropDown }))
+
+            }
+            } className="tags-list-item">important</li>
+            <li onClick={(event) => {
+                getFormInput(event, setNoteData, "tag", "secondary")
+                setActiveElement(active => ({ ...active, showAddLabelDropDown: !active.showAddLabelDropDown }))
+
+            }
+            } className="tags-list-item">secondary</li>
+            <li onClick={(event) => {
+                getFormInput(event, setNoteData, "tag", "chores")
+                setActiveElement(active => ({ ...active, showAddLabelDropDown: !active.showAddLabelDropDown }))
+
+            }
+            } className="tags-list-item">chores</li>
+        </ul >}
     </div>
 }

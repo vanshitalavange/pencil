@@ -3,7 +3,7 @@ import { useFilters } from "../../contexts"
 import { useState } from "react"
 export const Filters = () => {
     const { filters, dispatchFilters } = useFilters()
-    const { sortByDateType, priorities } = filters
+    const { sortByDateType, priorities,tags } = filters
     const [showFiltersList, setShowFiltersList] = useState(false)
     return <div className="filters-wrapper flex-column">
         <div onClick={() => setShowFiltersList(showFiltersList => !showFiltersList)} className="filters flex-row">
@@ -29,6 +29,18 @@ export const Filters = () => {
                     <label class="filter-label flex-row" htmlFor="old-to-new"><input value="oldToNew" onChange={(event) => dispatchFilters({ type: "SORT_BY_DATE", payload: event.target.value })} type="radio" id="old-to-new" name="date-filter-selector" class="date-filter-selector" checked={sortByDateType === "oldToNew"} />old to new</label>
 
                     <label class="filter-label flex-row" htmlFor="new-to-old"><input value="newToOld" onChange={(event) => dispatchFilters({ type: "SORT_BY_DATE", payload: event.target.value })} type="radio" id="new-to-old" name="date-filter-selector" class="date-filter-selector" checked={sortByDateType === "newToOld"} />new to old</label>
+                </div>
+            </div>
+            <div className="filters-list-item flex-column">
+                <p>Sort by tags</p>
+                <div className="filter-options flex-column">
+                    <label class="filter-label flex-row" htmlFor="work"><input value="work" onChange={(event) => dispatchFilters({ type: "SORT_BY_TAGS", payload: event.target.value })} type="checkbox" id="work" class="tags-selector" checked={tags.includes("work")} />work</label>
+
+                    <label class="filter-label flex-row" htmlFor="important"><input value="important" onChange={(event) => dispatchFilters({ type: "SORT_BY_TAGS", payload: event.target.value })} type="checkbox" id="important" class="tags-selector" checked={tags.includes("important")} />important</label>
+
+                    <label class="filter-label flex-row" htmlFor="secondary"><input value="secondary" onChange={(event) => dispatchFilters({ type: "SORT_BY_TAGS", payload: event.target.value })} type="checkbox" id="secondary" class="tags-selector" checked={tags.includes("secondary")} />secondary</label>
+
+                    <label class="filter-label flex-row" htmlFor="chores"><input value="chores" onChange={(event) => dispatchFilters({ type: "SORT_BY_TAGS", payload: event.target.value })} type="checkbox" id="chores" class="tags-selector" checked={tags.includes("chores")} />chores</label>
                 </div>
             </div>
             <button onClick={() => dispatchFilters({ type: "CLEAR_ALL" })} className="btn-clear-all">Clear all</button>

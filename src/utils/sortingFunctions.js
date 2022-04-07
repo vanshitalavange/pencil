@@ -18,6 +18,16 @@ const sortByDate = (filters, notes) => {
             return notes;
     }
 };
+const sortByTags = (filters, notes) => {
+    const { tags } = filters
+    if (tags.length !== 0) {
+        return notes.filter(note => tags.includes(note.tag))
+    } else {
+        return notes
+    }
+
+}
+
 
 const composeFilters =
     (filters, ...sortingFunctions) =>
@@ -27,4 +37,4 @@ const composeFilters =
             }, notes);
         };
 
-export { sortByPriority, sortByDate, composeFilters }
+export { sortByPriority, sortByDate, sortByTags, composeFilters }

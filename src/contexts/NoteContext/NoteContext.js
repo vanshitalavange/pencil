@@ -11,12 +11,13 @@ const NoteProvider = ({ children }) => {
     const defaultNoteData = {
         title: "",
         noteText: "",
-        tags: [],
+        tag: "",
         priority: "",
         date: new Date().toLocaleString(),
         edit: false
     }
     const [noteData, setNoteData] = useState(defaultNoteData)
+    useEffect(() => { console.log(noteData) }, [noteData])
     const [notesState, dispatchNotes] = useReducer(reducer, {
         notes: [],
         archives: [],

@@ -1,7 +1,7 @@
 import "./Notes.css"
 import { Sidebar, TextEditor, NoteCard, Filters } from "../../components"
 import { useFilters, useNote } from "../../contexts"
-import { sortByPriority, sortByDate, composeFilters } from "../../utils/sortingFunctions"
+import { sortByPriority, sortByDate, sortByTags, composeFilters } from "../../utils/sortingFunctions"
 export const Notes = () => {
     const { notesState, showTextEditor, setShowTextEditor } = useNote()
     const { notes } = notesState
@@ -10,6 +10,7 @@ export const Notes = () => {
         filters,
         sortByPriority,
         sortByDate,
+        sortByTags
     )(notes);
     const activeItem = { notes: true, archives: false, trash: false }
     return <main className="page-main flex-row">
