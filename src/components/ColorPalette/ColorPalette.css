@@ -1,0 +1,18 @@
+.palette {
+  position: absolute;
+  padding: 0.7rem var(--spacing-xs);
+  top: var(--spacing-lg);
+  gap: var(--spacing-xs);
+  border-radius: var(--border-rd-md);
+  background-color: var(--white-color);
+  box-shadow: 1px 2px 15px lightgrey;
+}
+.palette{
+  width:11rem;
+}
+.color-selector {
+  padding: var(--spacing-xxs);
+  width: var(--spacing-sm);
+  height: var(--spacing-sm);
+  border-radius: var(--border-rd-round);
+}

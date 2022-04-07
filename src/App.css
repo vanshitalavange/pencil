@@ -1,11 +1,13 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
 :root {
   /** colors **/
   --primary-color: hsl(217, 5%, 31%);
-  --secondary-color: hsl(180, 33%, 30%);
+  --secondary-color: hsl(223, 5%, 26%);
+  --accent-color:hsl(174, 100%, 21%);
   --footer-highlighted-text-color: hsl(120, 3%, 33%);
   --form-input-bg-color: hsl(0, 0%, 93%);
   --required-field-indicator-color: hsl(0, 95%, 60%);
-
+  --active-nav-item-background-color: hsl(45, 97%, 88%);
 
   /** spacings **/
   --spacing-xxs: 0.5rem;
@@ -40,10 +42,6 @@
   --border-rd-xl: 24px;
   --border-rd-round: 50%;
 }
-body {
-  width: 95vw;
-  margin: 0 auto;
-}
 /** overriding component library styles **/
 h1,
 h2,
@@ -53,11 +51,15 @@ h5,
 h6 {
   padding-top: 0;
 }
-.display-none{
+.display-none {
   display: none;
 }
-@media only screen and (min-width: 1400px) {
+.app-icon {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+@media only screen and (min-width: 1600px) {
   html {
-    font-size: 120%;
+    font-size: 140%;
   }
 }

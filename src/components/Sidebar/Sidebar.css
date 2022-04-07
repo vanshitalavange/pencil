@@ -1,0 +1,27 @@
+.sidebar-list {
+  gap: var(--spacing-sm);
+}
+.list-item {
+  padding: 0.8rem var(--spacing-md);
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color:var(--secondary-color);
+
+}
+.sidebar-list-icon {
+  font-size: var(--font-size-lg);
+}
+.active {
+  background-color: var(--active-nav-item-background-color);
+  border-top-right-radius: var(--border-rd-xl);
+  border-bottom-right-radius: var(--border-rd-xl);
+}
+@media only screen and (max-width: 600px) {
+  .list-item p {
+    display: none;
+  }
+  .list-item {
+    padding: var(--spacing-xs);
+    justify-content: center;
+  }
+}

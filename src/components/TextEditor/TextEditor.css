@@ -1,0 +1,57 @@
+.text-editor {
+  width: 50%;
+  margin: 0 auto;
+  gap: var(--spacing-xxs);
+  padding: var(--spacing-xs);
+  border-radius: var(--border-rd-md);
+  box-shadow: 1px 2px 15px lightgrey;
+}
+.text-editor-title {
+  padding: var(--spacing-xxs) var(--spacing-xs) var(--spacing-xxs) 0;
+  width: 100%;
+  font-size: var(--font-size-sm);
+  background-color: inherit;
+}
+.text-editor-textarea {
+  margin-top: 0;
+  border: none;
+  padding: var(--spacing-xs) 0;
+  resize: none;
+  font-family: inherit;
+  background-color: inherit;
+}
+.toolbar {
+  gap: var(--spacing-xxs);
+}
+.text-editor-actions {
+  gap: var(--spacing-xs);
+  position: relative;
+}
+.btn-add-note {
+  padding: 0.4rem var(--spacing-xs);
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  border-radius: var(--border-rd-xs);
+}
+.tags {
+  gap: var(--spacing-xxs);
+  margin-bottom: var(--spacing-xxs);
+}
+.tag {
+  padding: 0.3rem var(--spacing-xxs);
+  background-color: var(--secondary-color);
+  border-radius: var(--border-rd-xl);
+  gap: 0.3rem;
+  color: var(--white-color);
+}
+.close-tag {
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--white-color);
+}
+@media only screen and (max-width: 600px) {
+  .text-editor {
+    width: 95%;
+    margin-right: var(--spacing-sm);
+  }
+}

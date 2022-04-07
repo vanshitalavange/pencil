@@ -1,2 +1,8 @@
 export { Header } from "./Header/Header"
 export { Footer } from "./Footer/Footer"
+export { Sidebar } from "./Sidebar/Sidebar"
+export { TextEditor } from "./TextEditor/TextEditor"
+export { ColorPalette } from "./ColorPalette/ColorPalette"
+export { AddLabel } from "./AddLabel/AddLabel"
+export { Priority } from "./Priority/Priority"
+export { NoteCard } from "./NoteCard/NoteCard"

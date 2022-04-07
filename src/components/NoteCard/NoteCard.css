@@ -1,0 +1,31 @@
+.note-card {
+  gap: var(--spacing-sm);
+  width: fit-content;
+  border: 1px solid lightgray;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-rd-md);
+  max-width:25rem;
+  min-width:15rem;
+  word-wrap: break-word;
+  height: fit-content;
+}
+.note-title{
+    overflow-wrap:anywhere;
+}
+.tags {
+  gap: var(--spacing-xxs);
+}
+.priority {
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-rd-sm);
+  padding: 0.3rem var(--spacing-xxs);
+}
+.note-card-header {
+  gap: var(--spacing-sm);
+}
+.date-container{
+    gap:var(--spacing-xxs)
+}
+.date{
+    font-size: 0.9rem;
+}
