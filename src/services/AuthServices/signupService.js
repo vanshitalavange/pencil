@@ -5,7 +5,7 @@ export const signupService = async (newUserDetails, navigate, setUserState) => {
         if (response.status === 201) {
             localStorage.setItem('authToken', response.data.encodedToken)
             const { firstName } = response.data.createdUser
-            setUserState({ loginStatus: true, firstName })
+            setUserState({ loginStatus: true, firstName,authToken:localStorage.getItem('authToken') })
             navigate("/")
         }
     } catch (error) {

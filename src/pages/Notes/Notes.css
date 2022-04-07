@@ -1,8 +1,9 @@
 .page-main {
-  margin: var(--spacing-md) 0;
+  margin: var(--spacing-xl) 0;
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: var(--spacing-md);
+  min-height: 100vh;
 }
 .new-note {
   height: fit-content;
@@ -22,6 +23,6 @@
 .notes-section {
   gap: var(--spacing-xl);
 }
-.notes-display-section{
-  gap:var(--spacing-sm);
+.notes-display-section {
+  gap: var(--spacing-sm);
 }

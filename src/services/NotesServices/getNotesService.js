@@ -7,6 +7,7 @@ export const getNotes = async (authToken, dispatchNotes) => {
             }
         })
         dispatchNotes({ type: "GET_NOTES", payload: data.notes })
+        return data.notes
     } catch (error) {
         console.error(error)
     }

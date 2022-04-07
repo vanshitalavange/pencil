@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
-import { getNotes } from "../../services";
+import { getArchivedNotes, getNotes } from "../../services";
 import { useAuth } from "../index";
 import { reducer } from "./reducer";
 
@@ -17,15 +17,19 @@ const NoteProvider = ({ children }) => {
         edit: false
     }
     const [noteData, setNoteData] = useState(defaultNoteData)
-    const [notes, dispatchNotes] = useReducer(reducer, [])
+    const [notesState, dispatchNotes] = useReducer(reducer, {
+        notes: [],
+        archives: [],
+        deletedNotes: []
+    })
     useEffect(() => {
         if (authToken) {
             getNotes(authToken, dispatchNotes)
+            getArchivedNotes(authToken, dispatchNotes)
         }
     }, [authToken])
 
-    useEffect(() => console.log(notes), [notes])
-    return <NoteContext.Provider value={{ notes, dispatchNotes, showTextEditor, setShowTextEditor, noteData, setNoteData, defaultNoteData }}>{children}</NoteContext.Provider>
+    return <NoteContext.Provider value={{ notesState, dispatchNotes, showTextEditor, setShowTextEditor, noteData, setNoteData, defaultNoteData }}>{children}</NoteContext.Provider>
 }
 const useNote = () => useContext(NoteContext);
 export { useNote, NoteProvider }

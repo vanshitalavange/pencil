@@ -1,12 +1,13 @@
 import "./Notes.css"
 import { Sidebar, TextEditor } from "../../components"
-import { useState } from "react"
 import { useNote } from "../../contexts"
 import { NoteCard } from "../../components"
 export const Notes = () => {
-    const { notes, showTextEditor, setShowTextEditor } = useNote()
+    const { notesState, showTextEditor, setShowTextEditor } = useNote()
+    const { notes } = notesState
+    const activeItem = { notes: true, archives: false, trash: false }
     return <main className="page-main flex-row">
-        <Sidebar />
+        <Sidebar activeNavItem={activeItem} />
         <section className="notes-section flex-column">
             <div onClick={() => setShowTextEditor(true)} className="new-note  flex-row">
                 <span className="material-icons-round add-icon align-center app-icon">

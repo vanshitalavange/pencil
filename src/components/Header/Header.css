@@ -1,7 +1,7 @@
 header {
   padding: var(--spacing-xs);
   width: 95vw;
-  margin:0 auto;
+  margin: 0 auto;
 }
 .header-hero,
 .nav {

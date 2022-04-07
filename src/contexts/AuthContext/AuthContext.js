@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
         if (authToken) {
             setUserState(userState => ({ ...userState, loginStatus: true, authToken }))
         }
-    }, [authToken])
+    }, [userState.authToken])
     return <AuthContext.Provider value={{ userState, setUserState }}>{children}</AuthContext.Provider>
 }
 
