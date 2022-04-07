@@ -13,6 +13,7 @@ export const TextEditor = () => {
         showAddLabelDropDown: false,
         showPriorityDropDown: false
     })
+
     return <section style={color && { backgroundColor: color }} className="text-editor flex-column">
         <div className="flex-row justify-space-between">
             <input onChange={(event) => getFormInput(event, setNoteData)} value={title} className="text-editor-title" name="title" type="text" placeholder="Title" />
@@ -50,7 +51,7 @@ export const TextEditor = () => {
             </span>
             </button>
         </div>
-        <textarea onChange={(event) => { getFormInput(event, setNoteData) }} value={noteText} className="text-editor-textarea" name="noteText" placeholder="Take a note..."></textarea>
+        <textarea onChange={(event) => { getFormInput(event, setNoteData); setNoteData(noteData => ({ ...noteData, date: new Date().toLocaleString() })) }} value={noteText} className="text-editor-textarea" name="noteText" placeholder="Take a note..."></textarea>
         <div className="flex-row justify-space-between">
             <div className="text-editor-actions flex-row">
                 <ColorPalette activeElement={activeAction} setActiveElement={setActiveAction} />

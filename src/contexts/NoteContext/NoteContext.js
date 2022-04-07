@@ -13,7 +13,7 @@ const NoteProvider = ({ children }) => {
         noteText: "",
         tags: [],
         priority: "",
-        date: new Date().toLocaleDateString(),
+        date: new Date().toLocaleString(),
         edit: false
     }
     const [noteData, setNoteData] = useState(defaultNoteData)

@@ -2,7 +2,6 @@ import "./Header.css";
 import { Link, NavLink } from "react-router-dom"
 import { useAuth } from "../../contexts";
 import { logoutService } from "../../services";
-import react from "react";
 export const Header = () => {
   const { userState: { loginStatus, firstName }, setUserState } = useAuth()
   return (

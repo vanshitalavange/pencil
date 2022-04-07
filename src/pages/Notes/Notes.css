@@ -8,12 +8,14 @@
 .new-note {
   height: fit-content;
   gap: var(--spacing-xxs);
+  width: 60%;
 }
-.add-icon {
+.add-icon,
+.filter-icon {
   font-size: 2rem;
 }
 .new-note-text {
-  width: 60%;
+  width: 100%;
   padding: 0.7rem var(--spacing-xs);
   font-size: var(--font-size-sm);
   border-radius: var(--border-rd-sm);
@@ -25,4 +27,12 @@
 }
 .notes-display-section {
   gap: var(--spacing-sm);
+}
+.notes-section-header{
+  gap:var(--spacing-sm);
+}
+@media only screen and (max-width: 400px) {
+  .new-note {
+    width: 90%;
+  }
 }
