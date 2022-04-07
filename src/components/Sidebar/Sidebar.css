@@ -5,8 +5,7 @@
   padding: 0.8rem var(--spacing-md);
   gap: var(--spacing-xs);
   font-size: var(--font-size-sm);
-  color:var(--secondary-color);
-
+  color: var(--secondary-color);
 }
 .sidebar-list-icon {
   font-size: var(--font-size-lg);

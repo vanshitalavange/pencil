@@ -57,7 +57,7 @@ export const TextEditor = () => {
                 <AddLabel activeElement={activeAction} setActiveElement={setActiveAction} />
                 <Priority activeElement={activeAction} setActiveElement={setActiveAction} />
             </div>
-            <button type="submit" onClick={() => {
+            <button onClick={() => {
                 if (noteData.edit) {
                     editNote(authToken, _id, noteData, dispatchNotes)
                 } else {
