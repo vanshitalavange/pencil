@@ -6,7 +6,7 @@ export const Home = () => {
   const { userState: { loginStatus } } = useAuth()
   return (
     <section className="hero flex-row justify-center flex-wrap">
-      <img className="hero-banner" src="assets/banner.png" />
+      <img className="hero-banner" src="assets/banner.png" alt="banner"/>
       <div className="hero-desc align-center flex-column">
         <p className="desc-heading">Pencil</p>
         <div className="flex-column desc-subtext-wrapper">
