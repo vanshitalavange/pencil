@@ -10,7 +10,7 @@ export const Priority = ({ activeElement, setActiveElement }) => {
     return <div className="note-priority">
         <button onClick={() => setActiveElement(active => ({ showPaletteDropDown: false, showAddLabelDropDown: false, showPriorityDropDown: !active.showPriorityDropDown }))
         } className="btn-priority">{
-                noteData.priority === "" ? "low" : noteData.priority
+                noteData.priority
             }</button>
         {activeElement.showPriorityDropDown && <ul className="priority-list">
             <li onClick={(event) => {
