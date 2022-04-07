@@ -6,7 +6,6 @@ export const deleteNote = async (authToken, noteId, dispatchNotes, note, allNote
                 authorization: authToken
             }
         })
-        console.log("data from delete service", response)
         dispatchNotes({ type: "DELETE_NOTE", payload: { notes: response.data.notes, deletedNote: note } })
     } catch (error) {
         console.error(error)

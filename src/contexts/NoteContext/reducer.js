@@ -14,9 +14,7 @@ export const reducer = (state, { type, payload }) => {
         case "DELETE_ARCHIVED_NOTE":
             return { ...state, archives: [...payload] }
         case "DELETE_FROM_TRASH": {
-            console.log("existing deleted notes", state.deletedNotes)
             const updatedTrashItems = state.deletedNotes.filter(note => note !== payload)
-            console.log("updated deleted notes", updatedTrashItems)
             return { ...state, deletedNotes: updatedTrashItems }
         }
         default: return state
